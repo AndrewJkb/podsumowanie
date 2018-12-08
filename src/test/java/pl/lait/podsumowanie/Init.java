@@ -22,10 +22,11 @@ public class Init {
 		driver.get("https://www.seleniumhq.org");
 		
 		return driver;
+		
 		}
 	
 	public static void printScr(WebDriver driver) {
-
+		//robienie screenów
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		Long milis = timestamp.getTime();
 

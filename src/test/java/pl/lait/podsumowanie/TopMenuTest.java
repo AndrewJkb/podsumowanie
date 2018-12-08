@@ -10,7 +10,9 @@ public class TopMenuTest {
 	public void topMenu() {
 		WebDriver driver = Init.getdriver();
 		driver.findElement(By.linkText("About")).click();
+		Init.printScr(driver);
 		driver.findElement(By.linkText("Support")).click();
+		Init.printScr(driver);
 		driver.quit();
 		
 	}
@@ -19,7 +21,9 @@ public class TopMenuTest {
 	public void topMenu2() {
 		WebDriver driver = Init.getdriver();
 		driver.findElement(By.linkText("Support")).click();
+		Init.printScr(driver);
 		driver.findElement(By.linkText("About")).click();
+		Init.printScr(driver);
 		driver.quit();
 	}
 
