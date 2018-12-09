@@ -6,15 +6,20 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class TopMenuTest {
+public class TopMenuTest  extends Common{
 	
 	@Test
 	public void topMenu() {
 		String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
-		WebDriver driver = Init.getdriver();
-		Init.printScr(driver, "TopMenuTest", testName);
-		driver.findElement(By.linkText("About")).click();
-		Init.printScr(driver, "TopMenuTest", testName);
+		goToMainPage();
+		//Init.printScr(driver, "TopMenuTest", testName);
+		//driver.findElement(By.linkText("About")).click();
+		
+		linkClick("About");
+		linkClick("Suport");
+		
+		//Init.printScr(driver, "TopMenuTest", testName);
+		///Init.printScr(driver, "TopMenuTest", testName);
 		
 		driver.quit();
 		
@@ -22,7 +27,8 @@ public class TopMenuTest {
 	
 	@Test
 	public void topMenu2() {
-		WebDriver driver = Init.getdriver();
+		//WebDriver driver = Init.getdriver(); juz tu nie potzrbny bo jest w commonie
+		goToMainPage();
 		String title = driver.getTitle();
 		System.out.println(title);
 		String curentUrl = driver.getCurrentUrl();
