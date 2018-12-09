@@ -35,7 +35,7 @@ public class TopMenuTest {
 		System.out.println(title);
 		
 		String curentUrl1 = driver.getCurrentUrl();
-		String spodziewanyTytul = "jakiś tytył";
+		//String spodziewanyTytul = "jakiś tytył";
 		
 		System.out.println(curentUrl1);
 		
