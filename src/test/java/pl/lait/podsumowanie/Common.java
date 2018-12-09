@@ -24,7 +24,10 @@ public class Common {
 		}
 	}
 	
-	
+	public static void checkPageTitleAndStopTestIfWrong(String title) {
+		boolean checkStatus = driver.getTitle().equals(title);
+		assertTrue("Tytuł strony jest nieprawidłowy", checkStatus);
+	}
 	
 	
 	
