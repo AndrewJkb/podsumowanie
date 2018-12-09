@@ -40,5 +40,20 @@ public class Init {
 		}
 		}
 	
+	public static void printScr(WebDriver driver, String folderName,String testName) {
+		//robienie screenów
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		Long milis = timestamp.getTime();
+
+		WebDriver driver_tmp = new Augmenter().augment(driver);
+		File srcFile = ((TakesScreenshot)driver_tmp).getScreenshotAs(OutputType.FILE);
+
+		try {
+		FileUtils.copyFile(srcFile, new File("target/" + folderName + "/" + testName + "-" + "screenshot-" + milis +".png"));
+		} catch (IOException e) {
+		e.printStackTrace();
+		}
+		}
+	
 	
 }

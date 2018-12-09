@@ -1,5 +1,7 @@
 package pl.lait.podsumowanie;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,11 +10,12 @@ public class TopMenuTest {
 	
 	@Test
 	public void topMenu() {
+		String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
 		WebDriver driver = Init.getdriver();
+		Init.printScr(driver, "TopMenuTest", testName);
 		driver.findElement(By.linkText("About")).click();
-		Init.printScr(driver);
-		driver.findElement(By.linkText("Support")).click();
-		Init.printScr(driver);
+		Init.printScr(driver, "TopMenuTest", testName);
+		
 		driver.quit();
 		
 	}
@@ -20,10 +23,29 @@ public class TopMenuTest {
 	@Test
 	public void topMenu2() {
 		WebDriver driver = Init.getdriver();
+		String title = driver.getTitle();
+		System.out.println(title);
+		String curentUrl = driver.getCurrentUrl();
+		System.out.println(curentUrl);
+		
 		driver.findElement(By.linkText("Support")).click();
 		Init.printScr(driver);
-		driver.findElement(By.linkText("About")).click();
-		Init.printScr(driver);
+		
+		title = driver.getTitle();
+		System.out.println(title);
+		
+		String curentUrl1 = driver.getCurrentUrl();
+		String spodziewanyTytul = "jakiś tytył";
+		
+		System.out.println(curentUrl1);
+		
+		//assertTrue("Page title is wrong !!!", title.equals("Jakiś tytuł"));
+		
+		//boolean czyTytul;
+		
+		//czyTytul = title.equals(spodziewanyTytul);
+		//czyTytul = spodziewanyTytul.equals(title);// jeśli tu bedzie null to da falls
+		
 		driver.quit();
 	}
 
