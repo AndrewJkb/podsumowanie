@@ -14,7 +14,7 @@ public class TopMenuTest  extends Common{
 		goToMainPage();
 		//Init.printScr(driver, "TopMenuTest", testName);
 		//driver.findElement(By.linkText("About")).click();
-		
+		checkPageTitleAndStopTestIfWrong("Selenium - Web Browser Automation");
 		linkClick("About");
 		linkClick("Suport");
 		
